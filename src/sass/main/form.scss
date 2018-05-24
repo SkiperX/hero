@@ -1,0 +1,199 @@
+// VARIABLES // ============================== //
+$bg-color: transparent;
+$hl-color: $blue;
+$muted-color: $gray;
+$trans-time: 300ms;
+$width: 100%;
+
+
+
+
+// FORM // ============================== //
+
+.search-btn {
+  @extend .icon-search;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.material-group {
+  position: relative;
+  &:not(:last-child) {
+    margin-bottom: rem(25);
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 60px !important;
+  }
+
+  textarea {
+    resize: none;
+    @include media-breakpoint-down(sm) {
+      min-height: 120px;
+    }
+  }
+  input,
+  textarea {
+    background: none;
+    color: $muted-color;
+
+    padding: 12px 0 6px;
+    display: block;
+    width: $width;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $muted-color;
+    box-sizing: border-box;
+    //color: $blue;
+    font-size: 14px;
+    font-family: "Open Sans";
+    @include media-breakpoint-down(sm) {
+      padding-top: mrem(9);
+      font-size: mrem(30);
+    }
+    &:focus {
+      outline: none;
+    }
+    &:focus ~ label,
+    &:valid ~ label {
+      top: -8px;
+      font-size: 12px;
+      color: $hl-color;
+    }
+    &:focus ~ .bar:before {
+      width: $width;
+    }
+    &:focus ~ .search-btn,
+    &:valid ~ .search-btn {
+      @extend .icon-search-hover;
+    }
+  }
+
+  input[type="password"] {
+    letter-spacing: 0.3em;
+  }
+
+  label {
+    color: $muted-color;
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 1px;
+    top: 14px;
+    transition: $trans-time ease all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    @include media-breakpoint-down(sm) {
+      font-size: mrem(30);
+      font-weight: 300;
+    }
+  }
+
+  .bar {
+    position: relative;
+    display: block;
+    width: $width;
+    &:before {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 0px;
+      position: absolute;
+      background: $hl-color;
+      transition: $trans-time ease all;
+      left: 0%;
+    }
+  }
+}
+
+.parsley-error {
+  input,
+  textarea {
+    color: $danger;
+    border-color: $danger;
+  }
+  .bar {
+    &:before {
+      background: $danger;
+    }
+  }
+}
+.parsley-massage {
+  color: $danger;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 2px;
+  @extend .animate;
+}
+.textarea-col {
+  .material-group,
+  textarea {
+    height: 100%;
+  }
+}
+.search-form {
+  position: relative;
+  input {
+    padding-right: 22px;
+  }
+}
+.search-result {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid $gray2;
+  background-color: $white;
+  margin-top: -1px;
+  max-height: 368px;
+  outline: none;
+  z-index: 1;
+  opacity:0;
+  pointer-events: none;
+  transition: 0.3s;
+  &.open {
+    opacity:1;
+    pointer-events: all;
+  }
+}
+.search-result_list {
+  text-align: left;
+}
+.search-result_link {
+  padding: rem(10) rem(20);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+  color: $link2;
+  display: block;
+  text-decoration: none;
+  transition: 0.2s;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-color: $gray2;
+    background-color: $blue;
+    color: $white;
+  }
+}
+.modal-links {
+  margin-top: 35px;
+  &:not(.text-center) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+.modal-link {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,87 @@
+
+.arrows {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  margin-left: -12px;
+  margin-top: rem(35);
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+
+.arrows__item{
+  display: inline-block;
+  transform: rotate(-45deg);
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  border-color: black;
+  margin: 4px -.375rem 0px -1px;
+  width: rem(13);
+  height: rem(13);
+}
+
+
+
+.arrows__item
+{
+  -webkit-animation: mouse-scroll 1s infinite;
+  -moz-animation: mouse-scroll 1s infinite;
+
+
+  &.one
+  {
+    animation-delay: .1s;
+    animation-direction: alternate;
+  }
+
+  &.two
+  {
+    animation-delay: .2s;
+    animation-direction: alternate;
+
+  }
+
+  &.three
+  {
+    animation-delay: .3s;
+    animation-direction: alternate;
+
+  }
+  &.four
+  {
+    animation-delay: .4s;
+    animation-direction: alternate;
+
+  }
+  &.five
+  {
+    animation-delay: .5s;
+    animation-direction: alternate;
+
+  }
+  &.six
+  {
+    animation-delay: .6s;
+    animation-direction: alternate;
+
+  }
+  &.seven
+  {
+    animation-delay: .7s;
+    animation-direction: alternate;
+
+  }
+
+
+}
+
+
+
+@keyframes mouse-scroll {
+
+  0%   { opacity: 0.3; }
+  50%  { opacity: .6; }
+  100% { opacity: 1; }
+}

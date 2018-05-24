@@ -1,0 +1,237 @@
+/*! Vendor */
+/*
+@import "base/fonts";
+@import "base/base";*/
+html {
+  overflow: hidden;
+
+}
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  color: #131f47;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.8;
+  background-color: #57b0d6;
+
+
+}
+.container  {
+  background: #85d1e8;
+  width: 4000px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  //min-height: 1100px;
+}
+
+.water {
+  width: 100%;
+  margin-top: auto;
+  height: 305px;
+  background-color: #57b0d6;
+  z-index: 10;
+  position: relative;
+}
+.hill-1 {
+  background-color: #30915e;
+  width: 1098px;
+  height: 1098px;
+  position: absolute;
+  right: 100%;
+  top: 100%;
+  margin-right: -596px;
+  margin-top: -601px;
+
+  border-radius: 50%;
+  z-index: 5;
+
+}
+.hill-2 {
+  width: 1098px;
+  height: 1098px;
+  background-color: #186e3f;
+  border-radius: 50%;
+  position: absolute;
+  right: 100%;
+  top: 100%;
+  margin-right: -376px;
+  margin-top: -531px;
+
+
+  z-index: 20;
+
+}
+.hill-3 {
+  width: 607px;
+  height: 607px;
+  background-color: #186e3f;
+  border-radius: 50%;
+  position: absolute;
+  top: 100%;
+  left: 598px;
+  margin-top: -110px;
+  z-index: 20;
+}
+.hill-4 {
+  width: 444px;
+  height: 444px;
+  background-color: #30915e;
+  border-radius: 50%;
+  position: absolute;
+  left: 867px;
+  top: 100%;
+  margin-top: -73px;
+  z-index: 25;
+}
+.pier {
+  width: 304px;
+  height: 70px;
+  background-image: url(../images/pier.png);
+  background-size: cover;
+  position: absolute;
+  top: -36px;
+  left: 167px;
+  z-index: 35;
+  &:after {
+    content: "";
+    display: block;
+    width: 304px;
+    height: 70px;
+    background-image: url(../images/pier-reflection.png);
+    position: absolute;
+    left: 0;
+    top: 100%;
+  }
+}
+.boat {
+  width: 113px;
+  height: 40px;
+  background-image: url(../images/boat.png);
+  background-size: cover;
+  position: absolute;
+  top: -27px;
+  left: 589px;
+  z-index: 30;
+  &:after {
+    content: "";
+    display: block;
+    width: 113px;
+    height: 40px;
+    background-image: url(../images/boat-reflection.png);
+    position: absolute;
+    left: 0;
+    top: 100%;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 50px solid #fff69f;
+
+
+    transform: scale(1,-1);
+    top: 50px;
+    display: block;
+    /* z-index: 50; */
+    opacity: 0;
+    transition: 0.2s;
+    left: 46px;
+
+  }
+}
+.boat--whth-hero {
+  &:before {
+
+    opacity: 0.2;
+
+  }
+}
+.mountain-1 {
+  width: 511px;
+  height: 511px;
+  background-color: #ffffff;
+  opacity: 0.2;
+  transform: rotate(45deg);
+
+  position: absolute;
+  top: 100%;
+  left: 920px;
+  margin-top: -350px;
+}
+.mountain-2 {
+  width: 511px;
+  height: 511px;
+  background-color: #ffffff;
+  opacity: 0.2;
+  transform: rotate(45deg);
+
+  position: absolute;
+  top: 100%;
+
+  left: 1180px;
+  margin-top: -450px;
+}
+.hero {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 50px solid #fff69f;
+  position: absolute;
+  top: -86px;
+  left: 398px;
+
+}
+.text {
+  max-width: 570px;
+  position: absolute;
+  left: 50%;
+  margin-left: -225px;
+  top: 20%;
+  pointer-events: none;
+  z-index: 50;
+}
+@media (max-height: 700px) {
+  .text {
+    top: 30px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 1000px) {
+  .container {
+    display: none;
+  }
+  .text {
+    position: static;
+    margin: 15px;
+    max-width: none;
+    font-size: 14px;
+  }
+  html {
+    overflow: visible;
+
+  }
+}
+@media (max-height: 500px) {
+  .container {
+    display: none;
+  }
+  .text {
+    position: static;
+    margin: 15px;
+    max-width: none;
+    font-size: 14px;
+  }
+  html {
+    overflow: visible;
+
+  }
+}

@@ -1,0 +1,286 @@
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+
+}
+
+body {
+  color: #333333;
+    margin: 0;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.2;
+  font-size: 18px;
+  overflow-x: hidden;
+  opacity: 0;
+  transition: 0.6s opacity;
+  transition-delay: 0.2s;
+
+  &:not(.modal-open) {
+    overflow-y: scroll;
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    content: "";
+    background: rgba(#333, 0.8);
+    z-index: 30;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+}
+
+.body--modal {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  &:after {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+img {
+  max-width: 100%;
+}
+section {
+  padding: 64px 0 28px;
+  position: relative;
+  @media (max-width: 850px) {
+    text-align: center;
+  }
+}
+.dark-section {
+  background-color: #191919;
+  background-image: url(../images/lines.png);
+  color: white;
+  .text {
+    color: white;
+  }
+}
+.yellow-section {
+  background-color: #f1c544;
+}
+.wrapper {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+span.yell-color {
+  color: #ecc143;
+  font-weight: 700;
+}
+
+.title {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.text {
+  color: #333333;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 800px) {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
+.gallery-item {
+  @media (max-width: 800px) {
+    flex-basis: 25%;
+    flex-shrink: 0;
+  }
+  position: relative;
+  overflow: hidden;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url(../images/zoom-in.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 4;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    background: #000;
+    opacity: 0;
+    transition: 0.4s;
+  }
+  &:hover:after {
+    opacity: 0.8;
+  }
+  &:hover:before {
+    opacity: 0.25;
+  }
+  &:hover {
+    .gallery-mini {
+      transform: scale(1.1);
+    }
+  }
+}
+.gallery-mini {
+  transform: scale(1.01);
+  transition: 0.4s;
+  display: block;
+  will-change: transform;
+  &:hover {
+
+  }
+}
+.logo {
+  display: inline-block;
+  margin-top: 42px;
+  @media (min-width: 850px) {
+    margin-bottom: 74px;
+  }
+}
+.tel {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #f1c544;
+  text-decoration: none;
+  margin-right: 10px;
+  @media (min-width: 850px) {
+    float: right;
+    margin-top: 42px;
+    vertical-align: top;
+    display: inline-block;
+  }
+  @media (max-width: 850px) {
+    margin-bottom: 74px;
+    display: block;
+  }
+}
+.main-img {
+
+
+  display: block;
+  max-width: 60vw;
+  @media (min-width: 1000px) {
+    margin-right: -210px;
+    margin-left: auto;
+
+
+  }
+  @media (max-width: 1000px) {
+    margin: 0 auto;
+  }
+  @media (max-width: 400px) {
+    max-width: 100%;
+  }
+}
+.main-section {
+  padding: 0;
+  @media (min-width: 850px) {
+    text-align: right;
+  }
+  .wrapper {
+    position: relative;
+
+    @media (min-width: 1000px) {
+      min-height: 530px;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
+.text1 {
+  z-index: 100;
+  @media (min-width: 1000px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+@media (min-width: 850px) {
+  .text1 {
+    max-width: 684px;
+    text-align: left;
+  }
+  .text2 {
+    max-width: 615px;
+  }
+  .text3 {
+    max-width: 510px;
+  }
+  .text4 {
+    max-width: 674px;
+  }
+  .text5 {
+    max-width: 749px;
+  }
+}
+@media (max-width: 850px) {
+.desctop-br {
+  display: none;
+}
+}
+
+p {
+  margin-bottom: 30px;
+}
+.upper {
+  text-transform: uppercase;
+}
+.green-text {
+  color: #24923e;
+  font-weight: 700;
+}
+.sub-text {
+  color: #8f6f10;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.myata-img {
+  box-shadow: 0 0 18px rgba(25, 25, 25, 0.71);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  @media (min-width: 850px) {
+    float: right;
+    margin-left: 20px;
+  }
+}
+ul {
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: left;
+  li {
+    margin-bottom: 20px;
+  }
+}
